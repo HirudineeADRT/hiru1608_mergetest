@@ -1,0 +1,77 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "0fea6548-57af-4ad2-9095-573ec11df2f2": {
+        "id": "0fea6548-57af-4ad2-9095-573ec11df2f2",
+        "parent": null,
+        "name": "hiru1608_mergetest",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "12d6eca5-a2d0-492c-b577-7c6641d427c1"
+        ],
+        "isRemovable": false,
+        "filePath": "hiru1608_mergetest"
+      },
+      "12d6eca5-a2d0-492c-b577-7c6641d427c1": {
+        "id": "12d6eca5-a2d0-492c-b577-7c6641d427c1",
+        "parent": "0fea6548-57af-4ad2-9095-573ec11df2f2",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "hiru1608_mergetest/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      }
+    },
+    "deletedFiles": [],
+    "rootNode": "0fea6548-57af-4ad2-9095-573ec11df2f2",
+    "openFiles": [
+      "12d6eca5-a2d0-492c-b577-7c6641d427c1"
+    ],
+    "currentFileId": "12d6eca5-a2d0-492c-b577-7c6641d427c1",
+    "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": {}
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "hiru1608_mergetest",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1565928250927
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "hiru1608_mergetest",
+      "url": "https://github.com/HirudineeADRT/hiru1608_mergetest"
+    }
+  }
+}
