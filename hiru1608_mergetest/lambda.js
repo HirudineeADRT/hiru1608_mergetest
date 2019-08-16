@@ -5,9 +5,9 @@ const sqs = new SL_AWS.SQS(AWS);
 exports.handler = function (event, context, callback) {
     sqs.receiveMessage({
         QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/test-queue.fifo`,
-        AttributeNames: ['All'],
-        MaxNumberOfMessages: '1',
-        VisibilityTimeout: '30',
+        AttributeNames: ['MessageGroupId'],
+        MaxNumberOfMessages: '100',
+        VisibilityTimeout: '1',
         WaitTimeSeconds: '0'
     }).promise()
         .then(receivedMsgData => {
@@ -24,6 +24,8 @@ exports.handler = function (event, context, callback) {
         .catch(err => {
             // error handling goes here
         });
+
+
 
     callback(null, { "message": "Successfully executed" });
 }
