@@ -15,7 +15,7 @@ exports.handler = function (event, context, callback) {
                 let receivedMessages = receivedMsgData.Messages;
                 receivedMessages.forEach(message => {
                     // your logic to access each message through out the loop. Each message is available under variable message 
-                    // within this block
+                    // within this block //change thest
                 });
             } else {
                 // No messages to process
