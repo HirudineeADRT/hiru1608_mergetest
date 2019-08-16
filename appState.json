@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "hiru1608_mergetest/lambda.js",
-        "code": "let AWS = require('aws-sdk');\nlet SL_AWS = require('slappforge-sdk-aws');\nconst sqs = new SL_AWS.SQS(AWS);\n\nexports.handler = function (event, context, callback) {\n    sqs.receiveMessage({\n        QueueUrl: `https://sqs.${process.env.AWS_REGION}.amazonaws.com/${process.env.SIGMA_AWS_ACC_ID}/KTestSQS`,\n        AttributeNames: ['All'],\n        MaxNumberOfMessages: '1',\n        VisibilityTimeout: '30',\n        WaitTimeSeconds: '0'\n    }).promise()\n        .then(receivedMsgData => {\n            if (!!(receivedMsgData) && !!(receivedMsgData.Messages)) {\n                let receivedMessages = receivedMsgData.Messages;\n                receivedMessages.forEach(message => {\n                    // your logic to access each message through out the loop. Each message is available under variable message \n                    // within this block\n                });\n            } else {\n                // No messages to process\n            }\n        })\n        .catch(err => {\n            // error handling goes here\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -39,29 +39,7 @@
       "12d6eca5-a2d0-492c-b577-7c6641d427c1"
     ],
     "currentFileId": "12d6eca5-a2d0-492c-b577-7c6641d427c1",
-    "resources": {
-      "sqsKTestSQS": {
-        "name": "sqsKTestSQS",
-        "type": "SQS",
-        "config": {
-          "mode": 1,
-          "existing": true,
-          "name": "KTestSQS",
-          "url": "https://sqs.us-east-1.amazonaws.com/318300609668/KTestSQS",
-          "selectedRegion": "us-east-1",
-          "deliveryDelay": "0",
-          "deliveryDelayUnit": "seconds",
-          "queueType": "standardQueue",
-          "defaultVisibilityTimeout": "30",
-          "defaultVisibilityTimeoutUnit": "seconds",
-          "messageRetentionPeriod": "345600",
-          "messageRetentionPeriodUnit": "seconds",
-          "maximumMessageSize": 256,
-          "receiveMessageWaitTime": "0",
-          "queueARN": "arn:aws:sqs:us-east-1:318300609668:KTestSQS"
-        }
-      }
-    },
+    "resources": {},
     "customTemplate": {
       "dialect": null,
       "definitions": {}
@@ -77,22 +55,7 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "javascript",
-          "version": "2.176.0",
-          "dev": true,
-          "notRemovable": false
-        },
-        "slappforge-sdk-aws": {
-          "name": "slappforge-sdk-aws",
-          "language": "javascript",
-          "version": "0.0.5",
-          "dev": false,
-          "notRemovable": false
-        }
-      }
+      "dependencies": {}
     }
   },
   "PROJECT_META": {
@@ -102,7 +65,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1565942822479
+    "lastSave": 1565942866953
   },
   "VCS_STATE": {
     "provider": "GitHub",
